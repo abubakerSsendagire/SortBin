@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home · SortBin</title>
+<meta name="description" content="SortBin: a low-cost smart bin that classifies and sorts waste where it is thrown away.">
+<link rel="icon" href="data:image/svg+xml,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><rect x='5' y='4' width='22' height='26' rx='5' fill='%230b8a78'/><circle cx='12' cy='13' r='3.2' fill='%234d8f3c' stroke='%23fff' stroke-width='1.2'/><circle cx='20' cy='13' r='3.2' fill='%233a7bd5' stroke='%23fff' stroke-width='1.2'/><circle cx='12' cy='21' r='3.2' fill='%23b07a2a' stroke='%23fff' stroke-width='1.2'/><circle cx='20' cy='21' r='3.2' fill='%238e5bb5' stroke='%23fff' stroke-width='1.2'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="fit">
+<header class="nav"><div class="in">
+  <a class="brand" href="index.html">SortBin</a>
+  <nav class="links" aria-label="Main"><a href="index.html" aria-current="page">Home</a><a href="problem.html">The problem</a><a href="solution.html">How it works</a><a href="results.html">Results</a><a href="simulation.html">Simulation</a><a href="about.html">About & credits</a></nav>
+</div></header>
+<main>
+
+<div class="grid cols-home">
+  <div class="stack">
+    <section class="hero">
+      <div class="eyebrow">Final-year research project · Uganda Christian University</div>
+      <h1>Sorting waste <em>where it is thrown away</em></h1>
+      <p class="lead">SortBin is a low-cost smart bin for offices and schools. A camera and a lightweight neural network recognise each item as <b>organic, plastic, metal or general</b>, a rotating tray routes it to the matching chamber, and sensors report when each chamber needs emptying.</p>
+      <div class="btns"><a class="btn primary" href="solution.html">See how it works →</a><a class="btn ghost" href="simulation.html">Try the 3D simulation</a></div>
+      <div class="kn">
+        <div><div class="n">0.87</div><div class="t">macro-F1 on unseen real-world images</div></div>
+        <div><div class="n">4</div><div class="t">waste categories sorted at disposal</div></div>
+        <div><div class="n">~7 fps</div><div class="t">live on the prototype camera</div></div>
+        <div><div class="n">18</div><div class="t">studies in the systematic review</div></div>
+      </div>
+    </section>
+    <div class="row3">
+      <a class="panel card" href="problem.html"><div class="kick">01 · Problem</div><h2>Waste goes unsorted</h2><p class="muted">Under half of urban waste is collected, and it arrives mixed.</p><span class="more">Read more →</span></a>
+      <a class="panel card" href="solution.html"><div class="kick">02 · Solution</div><h2>Classify, route, monitor</h2><p class="muted">Computer vision decides the chamber at the moment of disposal.</p><span class="more">How it works →</span></a>
+      <a class="panel card" href="results.html"><div class="kick">03 · Results</div><h2>0.63 → 0.87</h2><p class="muted">Real-world training images closed most of the accuracy gap.</p><span class="more">See results →</span></a>
+    </div>
+  </div>
+  <section class="panel">
+    <div class="kick">Live demo</div><h2>The prototype classifying waste</h2>
+    <div class="vid"><video controls muted playsinline preload="metadata" poster="assets/demo_poster.jpg" width="478" height="850"><source src="assets/demo.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+    <p class="vidcap">Phone camera inside the bin, streamed to the classifier (DroidCam). Organic, plastic, metal and general items in turn.</p>
+  </section>
+  <div class="stack">
+    <figure class="panel" style="flex:1"><div class="kick">The design</div><div class="cutfig"><img src="assets/sim_cutaway.jpg" alt="Cutaway of the SortBin design" width="900" height="1394"></div></figure>
+    <section class="panel"><div class="kick">Aligned with</div><div class="chips"><span class="chip">SDG 3</span><span class="chip">SDG 9</span><span class="chip">SDG 11</span><span class="chip">SDG 12</span><span class="chip">NDP IV</span><span class="chip">Vision 2040</span></div></section>
+  </div>
+</div>
+
+</main>
+<footer class="site"><div class="in">
+  <span>SortBin · Ssendagire Abubaker · BSc Computer Science, Uganda Christian University · 2026</span>
+  <span><a href="simulation.html">3D simulation</a> · <a href="about.html">Credits</a></span>
+</div></footer>
+<script>
+document.querySelectorAll('[data-tabs]').forEach(function(g){
+  var btns=[].slice.call(g.querySelectorAll('[role=tab]'));
+  btns.forEach(function(b,i){
+    b.addEventListener('click',function(){select(i)});
+    b.addEventListener('keydown',function(e){
+      if(e.key==='ArrowRight'){select((i+1)%btns.length);btns[(i+1)%btns.length].focus()}
+      if(e.key==='ArrowLeft'){select((i-1+btns.length)%btns.length);btns[(i-1+btns.length)%btns.length].focus()}
+    });
+  });
+  function select(i){btns.forEach(function(x,j){x.setAttribute('aria-selected',j===i);x.tabIndex=j===i?0:-1;
+    document.getElementById(x.getAttribute('aria-controls')).hidden=j!==i;});}
+});
+</script>
+</body>
+</html>

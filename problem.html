@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The problem · SortBin</title>
+<meta name="description" content="Why waste in Uganda goes unsorted, and what the literature says about smart bins.">
+<link rel="icon" href="data:image/svg+xml,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><rect x='5' y='4' width='22' height='26' rx='5' fill='%230b8a78'/><circle cx='12' cy='13' r='3.2' fill='%234d8f3c' stroke='%23fff' stroke-width='1.2'/><circle cx='20' cy='13' r='3.2' fill='%233a7bd5' stroke='%23fff' stroke-width='1.2'/><circle cx='12' cy='21' r='3.2' fill='%23b07a2a' stroke='%23fff' stroke-width='1.2'/><circle cx='20' cy='21' r='3.2' fill='%238e5bb5' stroke='%23fff' stroke-width='1.2'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="fit">
+<header class="nav"><div class="in">
+  <a class="brand" href="index.html">SortBin</a>
+  <nav class="links" aria-label="Main"><a href="index.html">Home</a><a href="problem.html" aria-current="page">The problem</a><a href="solution.html">How it works</a><a href="results.html">Results</a><a href="simulation.html">Simulation</a><a href="about.html">About & credits</a></nav>
+</div></header>
+<main>
+<div class="titlebar"><div><div class="eyebrow">01 · The problem</div><h1>Uganda's waste goes unsorted</h1></div><p class="lead">Unsorted waste pollutes soil and water, spreads disease and sends recoverable material to landfill. The bottleneck is sorting.</p></div>
+<div class="grid cols-3">
+  <div class="stack">
+    <section class="panel">
+      <div class="kick">The scale</div>
+      <div class="row3">
+        <div class="mini stat"><div class="n">43.7<small>%</small></div><p>average collection coverage, 9 urban centres</p></div>
+        <div class="mini stat"><div class="n">40–50<small>%</small></div><p>of Kampala's waste is collected</p></div>
+        <div class="mini stat"><div class="n">180<small> t</small></div><p>of plastic waste in Kampala every day</p></div>
+      </div>
+      <p>Councils face persistent financial and logistical limits, and African countries struggle to put waste policy into practice.</p>
+      <p>Where sorting happens, it is <b>by hand, after collection</b>: slow, inconsistent and hard to scale. In Kasese, better collection left sorting at source untouched.</p>
+    </section>
+    <section class="panel grow">
+      <div class="kick">Objectives</div>
+      <h2>A low-cost bin that classifies, sorts and monitors</h2>
+      <div class="mini"><h3><span class="id">SO1</span>Classify</h3><p>Identify and evaluate a computer-vision model for four waste categories (accuracy, precision, recall, F1).</p></div>
+      <div class="mini"><h3><span class="id">SO2</span>Monitor</h3><p>IoT fill-level sensing that tracks each chamber and signals when it needs emptying.</p></div>
+      <div class="mini"><h3><span class="id">SO3</span>Sort</h3><p>An automated mechanism that routes each classified item into its chamber.</p></div>
+    </section>
+  </div>
+  <section class="panel">
+    <div class="kick">The opportunity</div>
+    <h2>Sort at source, not after collection</h2>
+    <svg viewBox="0 0 900 380" class="chart" role="img" aria-label="Today mixed waste goes to landfill; with SortBin each stream goes to compost, recycling or landfill"><defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1d2421"/></marker></defs><text x="10" y="28" class="dhead" style="font-family:IBM Plex Mono,monospace;font-size:15px;letter-spacing:.12em;fill:#5d6560">TODAY</text><rect x="10" y="44" width="200" height="84" rx="12" fill="#fbfaf6" stroke="#d9d5cb" stroke-width="2"/><text x="110.0" y="79.0" text-anchor="middle" class="dhead">Mixed bin</text><text x="110.0" y="105.0" text-anchor="middle" class="dsub">everything together</text><line x1="210" y1="86" x2="300" y2="86" stroke="#1d2421" stroke-width="2.5" marker-end="url(#arr)"/><rect x="305" y="44" width="250" height="84" rx="12" fill="#fbfaf6" stroke="#d9d5cb" stroke-width="2"/><text x="430.0" y="79.0" text-anchor="middle" class="dhead">Collected mixed</text><text x="430.0" y="105.0" text-anchor="middle" class="dsub">sorted by hand, if at all</text><line x1="555" y1="86" x2="645" y2="86" stroke="#1d2421" stroke-width="2.5" marker-end="url(#arr)"/><rect x="650" y="44" width="240" height="84" rx="12" fill="#efe3d6" stroke="#d9c6ae" stroke-width="2"/><text x="770.0" y="79.0" text-anchor="middle" class="dhead">Landfill</text><text x="770.0" y="105.0" text-anchor="middle" class="dsub">value lost, soil & water polluted</text><text x="10" y="186" class="dhead" style="font-family:IBM Plex Mono,monospace;font-size:15px;letter-spacing:.12em;fill:#08705f">WITH SORTBIN</text><rect x="10" y="204" width="200" height="160" rx="12" fill="#10362f" stroke="#10362f" stroke-width="2"/><text x="110.0" y="264.0" text-anchor="middle" class="dhead" style="fill:#fff">SortBin</text><text x="110.0" y="290.0" text-anchor="middle" class="dsub" style="fill:#cfe2dd">sorted at the</text><text x="110.0" y="316.0" text-anchor="middle" class="dsub" style="fill:#cfe2dd">point of disposal</text><rect x="305" y="204" width="250" height="34" rx="8" fill="#4d8f3c"/><text x="325" y="227" class="dhead" style="fill:#fff;font-size:17px">Organic</text><line x1="210" y1="284" x2="300" y2="221" stroke="#bdb7aa" stroke-width="2"/><line x1="555" y1="221" x2="645" y2="221" stroke="#1d2421" stroke-width="2.5" marker-end="url(#arr)"/><rect x="650" y="204" width="240" height="34" rx="8" fill="#fbfaf6" stroke="#d9d5cb" stroke-width="2"/><text x="668" y="227" class="dlab" style="font-size:17px">Compost</text><rect x="305" y="246" width="250" height="34" rx="8" fill="#3a7bd5"/><text x="325" y="269" class="dhead" style="fill:#fff;font-size:17px">Plastic</text><line x1="210" y1="284" x2="300" y2="263" stroke="#bdb7aa" stroke-width="2"/><line x1="555" y1="263" x2="645" y2="263" stroke="#1d2421" stroke-width="2.5" marker-end="url(#arr)"/><rect x="650" y="246" width="240" height="34" rx="8" fill="#fbfaf6" stroke="#d9d5cb" stroke-width="2"/><text x="668" y="269" class="dlab" style="font-size:17px">Recycling</text><rect x="305" y="288" width="250" height="34" rx="8" fill="#b07a2a"/><text x="325" y="311" class="dhead" style="fill:#fff;font-size:17px">Metal</text><line x1="210" y1="284" x2="300" y2="305" stroke="#bdb7aa" stroke-width="2"/><line x1="555" y1="305" x2="645" y2="305" stroke="#1d2421" stroke-width="2.5" marker-end="url(#arr)"/><rect x="650" y="288" width="240" height="34" rx="8" fill="#fbfaf6" stroke="#d9d5cb" stroke-width="2"/><text x="668" y="311" class="dlab" style="font-size:17px">Recycling</text><rect x="305" y="330" width="250" height="34" rx="8" fill="#8e5bb5"/><text x="325" y="353" class="dhead" style="fill:#fff;font-size:17px">General</text><line x1="210" y1="284" x2="300" y2="347" stroke="#bdb7aa" stroke-width="2"/><line x1="555" y1="347" x2="645" y2="347" stroke="#1d2421" stroke-width="2.5" marker-end="url(#arr)"/><rect x="650" y="330" width="240" height="34" rx="8" fill="#fbfaf6" stroke="#d9d5cb" stroke-width="2"/><text x="668" y="353" class="dlab" style="font-size:17px">Landfill (smaller share)</text></svg>
+    <p class="small muted">Mixed waste loses its value in landfill. Sorting at the point of disposal sends each stream where it can be recovered.</p>
+    <ul class="dots">
+      <li><b>Recyclables keep their value</b>: clean plastic and metal can be sold and reprocessed.</li>
+      <li><b>Organic waste can be composted</b> instead of rotting in landfill.</li>
+      <li><b>Collection follows need</b>: per-chamber fill levels replace fixed schedules.</li>
+      <li><b>Start small</b>: one building is a practical, replicable entry point for institutions.</li>
+    </ul>
+    <div class="callout" style="margin-top:auto"><div class="n">Gap</div><p>The technology works elsewhere, but no one has tested whether a low-cost bin that classifies, sorts and monitors waste works in a Ugandan institution.</p></div>
+  </section>
+  <div class="panel grow" data-tabs><div class="tabs" role="tablist"><button role="tab" id="lit-t0" aria-controls="lit-p0" aria-selected="true">Literature gaps</button><button role="tab" id="lit-t1" aria-controls="lit-p1" aria-selected="false" tabindex="-1">Study selection</button><button role="tab" id="lit-t2" aria-controls="lit-p2" aria-selected="false" tabindex="-1">Reported accuracy</button></div><div class="tabpanel" role="tabpanel" id="lit-p0" aria-labelledby="lit-t0"><p class="small muted">PRISMA 2020 review · Scopus &amp; Google Scholar · 2015–2026 · 18 studies included.</p>
+<div class="mini"><h3><span class="id o">G1</span>Lab accuracy does not transfer</h3><p>Reported 83–99.5%, but one model fell from 97.9% to 73.5% on a harder dataset; a clean-image model reached 49.7% on real landfill waste.</p></div>
+<div class="mini"><h3><span class="id o">G2</span>Few integrated systems</h3><p>A practical bin must classify on cheap hardware, route items reliably and report fill levels. Most systems do only part of this.</p></div>
+<div class="mini"><h3><span class="id o">G3</span>No evidence from the region</h3><p>None of the reviewed studies was implemented or evaluated in Uganda or East Africa.</p></div>
+</div><div class="tabpanel" role="tabpanel" id="lit-p1" aria-labelledby="lit-t1" hidden><svg viewBox="0 0 700 272" class="chart" role="img" aria-label="PRISMA flow: 91 records to 18 included studies"><rect x="0.0" y="0" width="700.0" height="58" rx="8" fill="#e4e0d6"/><text x="22.0" y="42" class="pnum" fill="#1d2421">91</text><text x="92.0" y="38" class="plab" fill="#1d2421">Records identified<tspan class="psub" dx="14">Scopus 61 · Google Scholar 30</tspan></text><rect x="49.0" y="68" width="602.0" height="58" rx="8" fill="#d6d1c4"/><text x="71.0" y="110" class="pnum" fill="#1d2421">77</text><text x="141.0" y="106" class="plab" fill="#1d2421">Screened<tspan class="psub" dx="14">after 14 duplicates removed</tspan></text><rect x="147.0" y="136" width="406.0" height="58" rx="8" fill="#2f5a51"/><text x="169.0" y="178" class="pnum" fill="#fff">29</text><text x="239.0" y="174" class="plab" fill="#fff">Full text assessed</text><rect x="196.0" y="204" width="308.0" height="58" rx="8" fill="#10362f"/><text x="218.0" y="246" class="pnum" fill="#fff">18</text><text x="288.0" y="242" class="plab" fill="#fff">Studies included</text></svg><p class="small muted">91 records identified, 14 duplicates removed, 77 screened, 29 assessed, 18 included.</p></div><div class="tabpanel" role="tabpanel" id="lit-p2" aria-labelledby="lit-t2" hidden><div class="tablewrap"><table>
+<thead><tr><th>Study</th><th>Model</th><th class="num">Result</th></tr></thead><tbody>
+<tr><td>Suneeram et al.<td>ResNet50</td><td class="num">92.8%</td></tr>
+<tr><td>Shah et al.<td>Xception</td><td class="num">94.4%</td></tr>
+<tr><td>Praveen et al.<td>ConvNeXt-Tiny</td><td class="num">95.83%</td></tr>
+<tr><td>Solanki et al.<td>MobileNet-Xception</td><td class="num">83%</td></tr>
+<tr><td>Hole et al.<td>EfficientNetV2-B2</td><td class="num">93.4%</td></tr>
+<tr><td>Azhar et al.<td>ResNet-MobileNet</td><td class="num">97.9 / 73.5%</td></tr>
+<tr><td>Al Noman et al.<td>YOLOv8</td><td class="num">93.41% mAP</td></tr>
+<tr><td>Siyad et al.<td>YOLOv11n</td><td class="num">90.17% mAP</td></tr>
+<tr><td>Ishaque &amp; Florence<td>YOLOv3-ResNet50</td><td class="num">98.88%</td></tr>
+<tr><td>Reddy et al.<td>Multimodal AI</td><td class="num">96.3%</td></tr>
+<tr><td>Reji et al.<td>Swin Transformer V2</td><td class="num">99.52%</td></tr>
+</tbody></table></div><p class="small muted">Not directly comparable: datasets, classes and metrics differ.</p></div></div>
+</div>
+
+</main>
+<footer class="site"><div class="in">
+  <span>SortBin · Ssendagire Abubaker · BSc Computer Science, Uganda Christian University · 2026</span>
+  <span><a href="simulation.html">3D simulation</a> · <a href="about.html">Credits</a></span>
+</div></footer>
+<script>
+document.querySelectorAll('[data-tabs]').forEach(function(g){
+  var btns=[].slice.call(g.querySelectorAll('[role=tab]'));
+  btns.forEach(function(b,i){
+    b.addEventListener('click',function(){select(i)});
+    b.addEventListener('keydown',function(e){
+      if(e.key==='ArrowRight'){select((i+1)%btns.length);btns[(i+1)%btns.length].focus()}
+      if(e.key==='ArrowLeft'){select((i-1+btns.length)%btns.length);btns[(i-1+btns.length)%btns.length].focus()}
+    });
+  });
+  function select(i){btns.forEach(function(x,j){x.setAttribute('aria-selected',j===i);x.tabIndex=j===i?0:-1;
+    document.getElementById(x.getAttribute('aria-controls')).hidden=j!==i;});}
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simulation · SortBin</title>
+<meta name="description" content="Interactive 3D simulation of the SortBin sort cycle.">
+<link rel="icon" href="data:image/svg+xml,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><rect x='5' y='4' width='22' height='26' rx='5' fill='%230b8a78'/><circle cx='12' cy='13' r='3.2' fill='%234d8f3c' stroke='%23fff' stroke-width='1.2'/><circle cx='20' cy='13' r='3.2' fill='%233a7bd5' stroke='%23fff' stroke-width='1.2'/><circle cx='12' cy='21' r='3.2' fill='%23b07a2a' stroke='%23fff' stroke-width='1.2'/><circle cx='20' cy='21' r='3.2' fill='%238e5bb5' stroke='%23fff' stroke-width='1.2'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="fit">
+<header class="nav"><div class="in">
+  <a class="brand" href="index.html">SortBin</a>
+  <nav class="links" aria-label="Main"><a href="index.html">Home</a><a href="problem.html">The problem</a><a href="solution.html">How it works</a><a href="results.html">Results</a><a href="simulation.html" aria-current="page">Simulation</a><a href="about.html">About & credits</a></nav>
+</div></header>
+<main>
+<div class="titlebar"><div><div class="eyebrow">04 · Simulation</div><h1>Explore the bin in 3D</h1></div><p class="lead">Drop an item and watch the sort cycle: flap, camera, ±45° rotation and tip into the matching chamber. Drag to orbit; scroll or pinch to zoom.</p></div>
+<iframe class="simframe" src="simulation/app.html" title="Interactive 3D simulation of the SortBin sort cycle"></iframe>
+<p class="small muted">Small screen or not loading? <a href="simulation/app.html">Open the simulation full screen →</a></p>
+
+</main>
+<footer class="site"><div class="in">
+  <span>SortBin · Ssendagire Abubaker · BSc Computer Science, Uganda Christian University · 2026</span>
+  <span><a href="simulation.html">3D simulation</a> · <a href="about.html">Credits</a></span>
+</div></footer>
+<script>
+document.querySelectorAll('[data-tabs]').forEach(function(g){
+  var btns=[].slice.call(g.querySelectorAll('[role=tab]'));
+  btns.forEach(function(b,i){
+    b.addEventListener('click',function(){select(i)});
+    b.addEventListener('keydown',function(e){
+      if(e.key==='ArrowRight'){select((i+1)%btns.length);btns[(i+1)%btns.length].focus()}
+      if(e.key==='ArrowLeft'){select((i-1+btns.length)%btns.length);btns[(i-1+btns.length)%btns.length].focus()}
+    });
+  });
+  function select(i){btns.forEach(function(x,j){x.setAttribute('aria-selected',j===i);x.tabIndex=j===i?0:-1;
+    document.getElementById(x.getAttribute('aria-controls')).hidden=j!==i;});}
+});
+</script>
+</body>
+</html>

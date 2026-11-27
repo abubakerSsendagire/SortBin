@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About & credits · SortBin</title>
+<meta name="description" content="About the SortBin project, credits and references.">
+<link rel="icon" href="data:image/svg+xml,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><rect x='5' y='4' width='22' height='26' rx='5' fill='%230b8a78'/><circle cx='12' cy='13' r='3.2' fill='%234d8f3c' stroke='%23fff' stroke-width='1.2'/><circle cx='20' cy='13' r='3.2' fill='%233a7bd5' stroke='%23fff' stroke-width='1.2'/><circle cx='12' cy='21' r='3.2' fill='%23b07a2a' stroke='%23fff' stroke-width='1.2'/><circle cx='20' cy='21' r='3.2' fill='%238e5bb5' stroke='%23fff' stroke-width='1.2'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="fit">
+<header class="nav"><div class="in">
+  <a class="brand" href="index.html">SortBin</a>
+  <nav class="links" aria-label="Main"><a href="index.html">Home</a><a href="problem.html">The problem</a><a href="solution.html">How it works</a><a href="results.html">Results</a><a href="simulation.html">Simulation</a><a href="about.html" aria-current="page">About & credits</a></nav>
+</div></header>
+<main>
+<div class="titlebar"><div><div class="eyebrow">05 · About & credits</div><h1>About the project</h1></div><p class="lead">SortBin: A Machine Learning &amp; IoT-Based Automated Waste Classification and Sorting Dustbin for Closed Environments in Uganda.</p></div>
+<div class="grid cols-about">
+  <div class="stack">
+    <section class="panel dark">
+      <div class="kick">Author</div>
+      <h2 style="font-size:20px">Ssendagire Abubaker</h2>
+      <p>Reg. No. S24B23/012<br>BSc Computer Science · Robotics &amp; AI track</p>
+      <p class="muted">Department of Computing &amp; Technology, Faculty of Engineering, Design &amp; Technology, Uganda Christian University</p>
+      <p><a href="mailto:bakerssendagire000@gmail.com" style="color:var(--mint)">bakerssendagire000@gmail.com</a></p>
+    </section>
+    <section class="panel">
+      <div class="kick">Alignment</div>
+      <ul class="dots">
+        <li><b>SDG 11.6</b> cut the environmental impact of cities' waste.</li>
+        <li><b>SDG 12.5</b> reduce waste through recycling and reuse.</li>
+        <li><b>SDG 3.9</b> reduce illness from pollution.</li>
+        <li><b>SDG 9.5</b> strengthen research and technology.</li>
+        <li><b>NDP IV</b> environment; science, technology &amp; innovation; urban development.</li>
+        <li><b>Vision 2040</b> science and innovation as a foundation for transformation.</li>
+      </ul>
+    </section>
+  </div>
+  <section class="panel">
+    <div class="kick">Credits</div>
+    <div class="mini"><h3>Datasets</h3><p><b>RealWaste</b> (Single, Iranmanesh &amp; Raad, 2023) · <b>The Garbage Dataset</b> (Kunwar, Kaggle release) · <b>TrashNet</b> (Yang &amp; Thung, 2016). Used in line with their licences.</p></div>
+    <div class="mini"><h3>Tools</h3><p>TensorFlow &amp; Keras, MobileNetV2 (ImageNet weights), Google Colab, DroidCam for the prototype camera stream, Three.js for the 3D simulation.</p></div>
+    <div class="mini"><h3>Acknowledgements</h3><p>The lecturers and the Department of Computing &amp; Technology at Uganda Christian University, and classmates for their feedback and support.</p></div>
+    <div class="mini"><h3>Ethics</h3><p>The camera faces only the tray; images with people or personal information are deleted. Hazardous items are out of scope.</p></div>
+  </section>
+  <section class="panel" id="references">
+    <div class="kick">Key references</div>
+    <ol class="refs"><li><span>[1]</span><span>R. K. Siyad et al., "AI-driven waste management system using deep learning model for detection and novel dual-axis actuator-based waste categorization," <i>Results in Engineering</i>, vol. 30, 111286, 2026.</span></li><li><span>[2]</span><span>F. Fotovvatikhah, I. Ahmedy, R. Md Noor and M. U. Munir, "A systematic review of AI-based techniques for automated waste classification," <i>Sensors</i>, vol. 25, no. 10, 3181, 2025.</span></li><li><span>[3]</span><span>N. C. A. Sallang et al., "A CNN-based smart waste management system using TensorFlow Lite and LoRa-GPS shield in Internet of Things environment," <i>IEEE Access</i>, vol. 9, 2021.</span></li></ol>
+  </section>
+</div>
+
+</main>
+<footer class="site"><div class="in">
+  <span>SortBin · Ssendagire Abubaker · BSc Computer Science, Uganda Christian University · 2026</span>
+  <span><a href="simulation.html">3D simulation</a> · <a href="about.html">Credits</a></span>
+</div></footer>
+<script>
+document.querySelectorAll('[data-tabs]').forEach(function(g){
+  var btns=[].slice.call(g.querySelectorAll('[role=tab]'));
+  btns.forEach(function(b,i){
+    b.addEventListener('click',function(){select(i)});
+    b.addEventListener('keydown',function(e){
+      if(e.key==='ArrowRight'){select((i+1)%btns.length);btns[(i+1)%btns.length].focus()}
+      if(e.key==='ArrowLeft'){select((i-1+btns.length)%btns.length);btns[(i-1+btns.length)%btns.length].focus()}
+    });
+  });
+  function select(i){btns.forEach(function(x,j){x.setAttribute('aria-selected',j===i);x.tabIndex=j===i?0:-1;
+    document.getElementById(x.getAttribute('aria-controls')).hidden=j!==i;});}
+});
+</script>
+</body>
+</html>
